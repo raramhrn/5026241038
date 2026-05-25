@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\PegawaiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +58,7 @@ Route::get('pert4', function () {
 
 //index pertemuan 5
 Route::get('index', function () {
-    return view('index');
+    return view('index1');
 });
 
 //pertemuan 5
@@ -71,4 +72,12 @@ Route::get('linksouri', function () {
 });
 
 //route CRUD
-Route::get('/pegawai', [PegawaiDBController::class, 'index']);
+Route::get('/pegawai1', [PegawaiDBController::class, 'index']);
+
+Route::get('/pegawai', [PegawaiController::class, 'index']);
+Route::get('/pegawaitambah', [PegawaiController::class, 'tambah']);
+Route::post('/pegawaistore', [PegawaiController::class, 'store']);
+Route::get('/pegawaiedit/{id}', [PegawaiController::class, 'edit']);
+Route::post('/pegawaiupdate', [PegawaiController::class, 'update']);
+Route::get('/pegawaihapus/{id}', [PegawaiController::class, 'hapus']);
+Route::get('/pegawaicari', [PegawaiController::class, 'cari']);
