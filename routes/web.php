@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\NilaiKuliahController;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +75,7 @@ Route::get('linksouri', function () {
 //route CRUD
 Route::get('/pegawai1', [PegawaiDBController::class, 'index']);
 
+//pert 12
 Route::get('/pegawai', [PegawaiController::class, 'index']);
 Route::get('/pegawaitambah', [PegawaiController::class, 'tambah']);
 Route::post('/pegawaistore', [PegawaiController::class, 'store']);
@@ -81,3 +83,9 @@ Route::get('/pegawaiedit/{id}', [PegawaiController::class, 'edit']);
 Route::post('/pegawaiupdate', [PegawaiController::class, 'update']);
 Route::get('/pegawaihapus/{id}', [PegawaiController::class, 'hapus']);
 Route::get('/pegawaicari', [PegawaiController::class, 'cari']);
+
+//pert15 latihan EAS
+Route::get('/nilai', [NilaiKuliahController::class, 'index']);
+Route::get('/tambahnilai', [NilaiKuliahController::class, 'tambah']);
+Route::post('/storenilai', [NilaiKuliahController::class, 'store']);
+// Route::get('/nilaiedit/{id}', [NilaiKuliahController::class
