@@ -11,7 +11,6 @@
 	<a href="/pegawai/tambah"> + Tambah Pegawai Baru</a>
 
 	<br/>
-	<br/>
 
 	<table border="1">
 		<tr>

@@ -5,6 +5,9 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\NilaiKuliahController;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\DataBelanjaController;
+use App\Http\Controllers\KeyboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,8 +87,27 @@ Route::post('/pegawaiupdate', [PegawaiController::class, 'update']);
 Route::get('/pegawaihapus/{id}', [PegawaiController::class, 'hapus']);
 Route::get('/pegawaicari', [PegawaiController::class, 'cari']);
 
+Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
+Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
+Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
+Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
+Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
+Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+
 //pert15 latihan EAS
 Route::get('/nilai', [NilaiKuliahController::class, 'index']);
 Route::get('/tambahnilai', [NilaiKuliahController::class, 'tambah']);
 Route::post('/storenilai', [NilaiKuliahController::class, 'store']);
-// Route::get('/nilaiedit/{id}', [NilaiKuliahController::class
+
+//pert15 latihan EAS 2
+Route::get('/belanja', [DataBelanjaController::class, 'index']);
+Route::get('/tambahbelanja', [DataBelanjaController::class, 'tambah']);
+Route::post('/storebelanja', [DataBelanjaController::class, 'store']);
+Route::get('/tambahbelanja/{id}', [DataBelanjaController::class, 'tambah']);
+Route::get('/hapusbelanja/{id}', [DataBelanjaController::class, 'hapus']);
+
+//Tugas Pra EAS
+Route::get('/keyboard', [KeyboardController::class, 'index']);
+Route::get('/tambahkeyboard', [KeyboardController::class, 'tambah']);
+Route::post('/storekeyboard', [KeyboardController::class, 'store']);
+Route::get('/keyboardhapus/{id}', [KeyboardController::class, 'hapus']);

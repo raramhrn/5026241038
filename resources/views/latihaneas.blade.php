@@ -1,6 +1,6 @@
 @extends('template')
 
-@section('title', 'Latihan EAS')
+@section('title', 'Latihan EAS 1')
 
 @section('konten')
 
