@@ -8,6 +8,7 @@ use App\Http\Controllers\NilaiKuliahController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\DataBelanjaController;
 use App\Http\Controllers\KeyboardController;
+use App\Http\Controllers\TagihanAirController;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,3 +112,8 @@ Route::get('/keyboard', [KeyboardController::class, 'index']);
 Route::get('/tambahkeyboard', [KeyboardController::class, 'tambah']);
 Route::post('/storekeyboard', [KeyboardController::class, 'store']);
 Route::get('/keyboardhapus/{id}', [KeyboardController::class, 'hapus']);
+
+//EAS
+Route::get('/eas', [TagihanAirController::class, 'index'])->name('tagihan_air.index');
+Route::get('/tagihan_air/create', [TagihanAirController::class, 'create'])->name('tagihan_air.create');
+Route::post('/tagihan_air', [TagihanAirController::class, 'store'])->name('tagihan_air.store');
